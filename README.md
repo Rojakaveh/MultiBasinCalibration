@@ -16,7 +16,7 @@ This code contains an R function that consists of two steps, first streamflow da
 ##### LOOCV.R
 The code for implementation Leave One Out Cross-Validation.
 
-### R package that needs to be installed:
+### R packages that need to be installed:
 •   httr
 •   EcoHydRology
 •   curl
@@ -28,3 +28,6 @@ The code for implementation Leave One Out Cross-Validation.
 •   dplyr
 •   SWATmodel
 •   ggplot2
+
+# License
+Please see the LICENSE.md file for license information.
