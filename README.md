@@ -17,11 +17,14 @@ This code contains an R function that consists of two steps, first streamflow da
 The code for implementation Leave One Out Cross-Validation.
 
 ### R package that needs to be installed:
-•   Zoo
-•   Metrics
-•   hydroGOF
+•   httr
+•   EcoHydRology
+•   curl
 •   tidyverse
 •   lubridate
-•   imputeTS
+•   data.table
 •   forecast
-•   bigleaf
+•   rnoaa
+•   dplyr
+•   SWATmodel
+•   ggplot2
