@@ -1,7 +1,7 @@
 Multi-Basin Calibration (MBC)
 =================
 
-Multi-Basin Calibration method (MBC) to calibrate several neighboring and similar watersheds simultaneously in Low Data Environment (LDE).
+Multi-Basin Calibration method (MBC) to calibrate several neighboring and similar watersheds simultaneously in Low Data Environment (LDE). Running the codes in this repository requirs `R` and `RStudio`.
 
 
 ## Description
