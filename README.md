@@ -8,6 +8,7 @@ See the following links for more information on  `R` and `RStudio` download and 
 
 - `R` download: <https://www.r-project.org/>
 - `RStudio` download: <https://www.rstudio.com/>
+
 There is also a cloud-based `RStudio` sever at the following location:
 
 - Cloud-based `RStudio` server: <https://rstudio.cloud/>
