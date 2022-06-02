@@ -18,6 +18,22 @@ This repository contains R codes for a project called **Watershed Model Paramete
 
 ## Quick start
 
+### R packages that need to be installed:
+•   httr
+•   EcoHydRology
+•   curl
+•   tidyverse
+•   lubridate
+•   data.table
+•   forecast
+•   rnoaa
+•   dplyr
+•   SWATmodel
+•   ggplot2
+
+        if (!require("pacman")) install.packages("pacman")
+        pacman::p_load(httr,EcoHydRology,curl,tidyverse,lubridate,data.table,forecast,rnoaa,dplyr,SWATmodel,ggplot2)
+
 ##### SWATInitSingleCalib.R
 SWAT initialization for all 4 watersheds and single single basin calibration code.
 For EBDC watershed we used rating curve to generate measured daily streamflows that can be found in **EBDCflowdata.RData** file in this repository.
@@ -44,22 +60,6 @@ The code for implementation Leave One Out Cross-Validation.In order to run this 
 
         download.file("https://raw.githubusercontent.com/Rojakaveh/MultiBasinCalibration/main/LOOCV.R","LOOCV.R")
         file.edit("LOOCV.R")
-
-### R packages that need to be installed:
-•   httr
-•   EcoHydRology
-•   curl
-•   tidyverse
-•   lubridate
-•   data.table
-•   forecast
-•   rnoaa
-•   dplyr
-•   SWATmodel
-•   ggplot2
-
-        if (!require("pacman")) install.packages("pacman")
-        pacman::p_load(httr,EcoHydRology,curl,tidyverse,lubridate,data.table,forecast,rnoaa,dplyr,SWATmodel,ggplot2)
 
 # License
 Please see the LICENSE.md file for license information.
