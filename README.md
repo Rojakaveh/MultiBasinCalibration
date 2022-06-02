@@ -58,5 +58,8 @@ The code for implementation Leave One Out Cross-Validation.In order to run this 
 •   SWATmodel
 •   ggplot2
 
+        if (!require("pacman")) install.packages("pacman")
+        pacman::p_load(httr,EcoHydRology,curl,tidyverse,lubridate,data.table,forecast,rnoaa,dplyr,SWATmodel,ggplot2)
+
 # License
 Please see the LICENSE.md file for license information.
