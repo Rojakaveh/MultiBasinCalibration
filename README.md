@@ -6,6 +6,7 @@ Multi-Basin Calibration method (MBC) to calibrate several neighboring and simila
 ## Links
 See the following links for more information on  `R` and `RStudio` download and installation:
 
+- An introduction to `R`: <https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf>
 - `R` download: <https://www.r-project.org/>
 - `RStudio` download: <https://www.rstudio.com/>
 
