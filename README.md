@@ -22,7 +22,8 @@ This repository contains R codes for a project called **Watershed Model Paramete
 SWAT initialization for all 4 watersheds and single single basin calibration code.
 For EBDC watershed we used rating curve to generate measured daily streamflows that can be found in **EBDCflowdata.RData** file in this repository.
 In order to run this script in `RStudio`:
-    download.file("https://raw.githubusercontent.com/Rojakaveh/MultiBasinCalibration/main/SWATInitSingleCalib.R","SWATInitSingleCalib.R")
+
+        download.file("https://raw.githubusercontent.com/Rojakaveh/MultiBasinCalibration/main/SWATInitSingleCalib.R","SWATInitSingleCalib.R")
     
         file.edit("SWATInitSingleCalib.R")
 
