@@ -34,7 +34,11 @@ In order to run this script in `RStudio`:
         file.edit("SensitivityAnalysis.R")
 
 ##### MBCfunc.R
-This code contains an R function that consists of two steps, first streamflow data from each of three LDE watersheds (LOC-Monkton, EBDC, and WBDC) are aggregated and second these data are then calibrated as a single dataset.
+This code contains an R function that consists of two steps, first streamflow data from each of three LDE watersheds (LOC-Monkton, EBDC, and WBDC) are aggregated and second these data are then calibrated as a single dataset.In order to run this script in `RStudio`:
+
+        download.file("https://raw.githubusercontent.com/Rojakaveh/MultiBasinCalibration/main/MBCfunc.R","MBCfunc.R")
+        file.edit("MBCfunc.R")
+        
 ##### LOOCV.R
 The code for implementation Leave One Out Cross-Validation.
 
