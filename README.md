@@ -40,7 +40,10 @@ This code contains an R function that consists of two steps, first streamflow da
         file.edit("MBCfunc.R")
         
 ##### LOOCV.R
-The code for implementation Leave One Out Cross-Validation.
+The code for implementation Leave One Out Cross-Validation.In order to run this script in `RStudio`:
+
+        download.file("https://raw.githubusercontent.com/Rojakaveh/MultiBasinCalibration/main/LOOCV.R","LOOCV.R")
+        file.edit("LOOCV.R")
 
 ### R packages that need to be installed:
 •   httr
