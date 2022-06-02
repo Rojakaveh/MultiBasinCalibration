@@ -24,7 +24,6 @@ For EBDC watershed we used rating curve to generate measured daily streamflows t
 In order to run this script in `RStudio`:
 
         download.file("https://raw.githubusercontent.com/Rojakaveh/MultiBasinCalibration/main/SWATInitSingleCalib.R","SWATInitSingleCalib.R")
-    
         file.edit("SWATInitSingleCalib.R")
 
 
