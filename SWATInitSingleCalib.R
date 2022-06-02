@@ -1,11 +1,19 @@
-source("https://raw.githubusercontent.com/Rojakaveh/Elab_SWATinitcalib/main/build_wgn_file.R") #loading the build_wgn_file func
-source("https://raw.githubusercontent.com/Rojakaveh/FillMissWX/main/FillMissWX.R")#loading fillmisswx func
-pacman::p_load(rnoaa,SWATmodel)
-##-----getting usgs info--------------------------
-flowgage_id="04282650" #Little Otter Creek at Ferrisburg, VT.
+source("https://raw.githubusercontent.com/Rojakaveh/Elab_SWATinitcalib/main/build_wgn_file.R") #loading the build_wgn_file func for swat weather generator
+source("https://raw.githubusercontent.com/Rojakaveh/FillMissWX/main/FillMissWX.R")#loading fillmisswx func for getting weather data from NOAA GHCN
+pacman::p_load(rnoaa,SWATmodel) #loading libraries
+#----------------------------------------------------------------------------------------------
+#-------------------------SWAT model initialization-------------------------------------------
+#------------------------------------------------------------------------------------------------
+##-----getting usgs info for observed flow data--------------------------
+#this is an example of SWAT model initialization for USGS 04282650, Little Otter Creek at Ferrisburg, VT.
+#in this study, we have 3 other watersheds including:
+#1-USGS 04282629 LITTLE OTTER CK AT MONKTON RD, NR FERRISBURGH, VT
+#2-USGS 04282586 WEST BR DEAD CREEK NEAR ADDISON, VT
+#3- USGS 04282581 EAST BR DEAD CREEK NEAR BRIDPORT, VT, for this watershed we have to generate streamflow data using rating curve
+flowgage_id="04282650" #Little Otter Creek at Ferrisburg, VT, GAGE NUMBER.
 flowgage=get_usgs_gage(flowgage_id,begin_date = "2010-01-01",end_date= "2021-12-31")
 flowgage$flowdata$Qmm=(flowgage$flowdata$flow)/(flowgage$area*1000)#mm
-##getting ghcn weather data
+##getting ghcn weather data USING FillMissWX function and IDW method for missing data interpolation
 WXData=FillMissWX(declat = flowgage$declat,declon = flowgage$declon,StnRadius =30,date_min=min(flowgage$flowdata$mdate),date_max=max(flowgage$flowdata$mdate),method = "IDW",minstns = 3,alfa = 2)
 AllDays=data.frame(date=seq(min(flowgage$flowdata$mdate), by = "day", length.out = max(flowgage$flowdata$mdate)-min(flowgage$flowdata$mdate)))
 WXData=merge(AllDays,WXData,all=T)
@@ -20,8 +28,11 @@ WXData$DATE=WXData$date
 build_swat_basic(dirname= flowgage$gagename, iyr=min(year(WXData$DATE),na.rm=T), nbyr=(max(year(WXData$DATE),na.rm=T)-min(year(WXData$DATE),na.rm=T) +1), wsarea=flowgage$area, elev=flowgage$elev, declat=flowgage$declat, declon=flowgage$declon, hist_wx=WXData)
 build_wgn_file() #wgn func
 runSWAT2012() #run swat 
-###--------Calibration----------
-
+#-------------------------------------------------------------------------------------------------------------
+#---------------------------------------Calibration-----------------------------------------------------------
+#-------------------------------------------------------------------------------------------------------------
+#here is the code for single basin calibration and the same code has been 
+#used to generate 10 datasets (5 for 2010-2021 and 5 for 2015-2021) for sensitivity analysis
 source("https://r-forge.r-project.org/scm/viewvc.php/*checkout*/pkg/SWATmodel/R/readSWAT.R?root=ecohydrology")
 save(readSWAT,file="readSWAT.R")
 source("https://r-forge.r-project.org/scm/viewvc.php/*checkout*/pkg/EcoHydRology/R/setup_swatcal.R?root=ecohydrology")
