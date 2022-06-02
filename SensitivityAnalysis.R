@@ -1,5 +1,7 @@
 ##------SENSITIVITY ANALYSIS-----------------
 #----------STEP 1: GETTING 10DATASETS FROM OUTDEOPTIM FOR 2015-2021 AND 2010-2021 FOR LOC_FERISSBURG-----------
+#LOC_Ferrisburg_2010, is the  name of folder for LOC_ferrisburg 2010-2021 SWAT initialization
+#LOC_Ferrisburg_2015, is the  name of folder for LOC_ferrisburg 2015-2021 SWAT initialization
 library(SWATmodel)
 flowgage_id="04282650" #Little Otter Creek at Ferrisburg, VT.
 flowgage=get_usgs_gage(flowgage_id,begin_date = "2010-01-01",end_date= "2022-01-01")
@@ -8,7 +10,7 @@ flowgage$flowdata$Qm3ps= flowgage$flowdata$flow/24/3600 #m3/s
 max(flowgage$flowdata$Qm3ps)
 flowgage$flowdata=subset(flowgage$flowdata, flowgage$flowdata$Qm3ps<30)
 
-
+##moving initialization folder to dev/shm directory for faster run
 dir.create("/dev/shm/rojakaveh")
 setwd("/dev/shm/rojakaveh")
 dir.create("CrackFlowFer2010")
@@ -214,7 +216,6 @@ for(i in list.files(pattern = "20211130*")){
     percentchange=rbind(percentchange,deltatmp1)
   }
 }
-#percentchange=percentchange[,!names(percentchange)%in%c("par12","par13")]
 
 deltanames=c("%Changes in")
 par(mar= c(4,4,1,1), oma = rep(1,4))
@@ -305,11 +306,6 @@ X=X[1:(length(X)-1)]
 sensparamcols=which(colSums(junk)==0)[1:(length(which(colSums(junk)==0))-1)]
 sensitivity_params=calib_params[sensparamcols,]
 
-##########################
-#########################################################
-######## Sensitive Params
-##################################
-##### 
 rm("myx")
 for(i in list.files(pattern = "20211130*")){
   load(i)
@@ -322,12 +318,9 @@ for(i in list.files(pattern = "20211130*")){
     myx=rbind(myx,tmpdf)
   }
 }
-#BestMemit=BestMemit[,!names(BestMemit)%in%c("par12","par13")]
 myx=myx[c(1,2,3,6,7,8,9,10,11,12,13,14,15,16,17,18)]
-#calib_params$parameter[c(8,9,10,11,14,15,16,17,18,19,20)]
 calib_params$parameter[c(1,2,3,6,7,8,9,10,11,12,13,14,15,16,17,18)]
 
-#colnames(myx)=calib_params$parameter[c(8,9,10,11,14,15,16,17,18,19,20)]
 colnames(myx)=calib_params$parameter[c(1,2,3,6,7,8,9,10,11,12,13,14,15,16,17,18)]
 
 summary(myx)
