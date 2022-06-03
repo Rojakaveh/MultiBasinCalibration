@@ -1,4 +1,4 @@
-Multi-Basin Calibration (MBC)
+Multi-Basin Calibration (MBC) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6609237.svg)](https://doi.org/10.5281/zenodo.6609237)
 =================
 
 Multi-Basin Calibration method (MBC) to calibrate several neighboring and similar watersheds simultaneously in Low Data Environment (LDE). Running the codes in this repository requirs `R` and `RStudio`.
@@ -63,4 +63,3 @@ The code for implementation Leave One Out Cross-Validation.In order to run this 
 
 # License
 Please see the LICENSE.md file for license information.
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6609237.svg)](https://doi.org/10.5281/zenodo.6609237)
