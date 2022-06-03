@@ -63,3 +63,4 @@ The code for implementation Leave One Out Cross-Validation.In order to run this 
 
 # License
 Please see the LICENSE.md file for license information.
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6609237.svg)](https://doi.org/10.5281/zenodo.6609237)
