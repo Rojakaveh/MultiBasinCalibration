@@ -324,10 +324,10 @@ calib_params$parameter[c(1,2,3,6,7,8,9,10,11,12,13,14,15,16,17,18)]
 colnames(myx)=calib_params$parameter[c(1,2,3,6,7,8,9,10,11,12,13,14,15,16,17,18)]
 
 summary(myx)
-RelSensi=base::as.data.frame(stack(list(ALPHA_BF=Sr_par2,SMFMX=Sr_par9,CN2=Sr_par13,Ksat=Sr_par16,TIMP=Sr_par11,
-                                        Depth=Sr_par14,GW_DELAY=Sr_par1,AW=Sr_par15,ESCO=Sr_par17,SURLAG=Sr_par12,
-                                        RCHRG_DP=Sr_par6,GWQMN=Sr_par3,EPCO=Sr_par18,SMFMN=Sr_par10,SMTMP=Sr_par8,
-                                        SFTMP=Sr_par7
+RelSensi=base::as.data.frame(stack(list(ALPHA_BF=Sr_par2$par2,SMFMX=Sr_par9$par9,CN2=Sr_par13$par13,Ksat=Sr_par16$par16,TIMP=Sr_par11$par11,
+                                        Depth=Sr_par14$par14,GW_DELAY=Sr_par1$par1,AW=Sr_par15$par15,ESCO=Sr_par17$par17,SURLAG=Sr_par12$par12,
+                                        RCHRG_DP=Sr_par6$par6,GWQMN=Sr_par3$par3,EPCO=Sr_par18$par18,SMFMN=Sr_par10$par10,SMTMP=Sr_par8$par8,
+                                        SFTMP=Sr_par7$par7
 )))
 
 
